@@ -74,18 +74,31 @@ Check if findings are already captured:
 - Distill into a pattern and add/update in `memory/cog-meta/patterns.md` (or domain `patterns.md` if domain-specific)
 - Don't delete the observations — they stay as the raw record
 
-**patterns.md size cap — HARD LIMIT: 110 lines / 7KB.** After any updates, check the file size. If it exceeds the cap:
+**Core patterns.md size cap — HARD LIMIT: 70 lines / 5.5KB.** After any updates, check the file size. If it exceeds the cap:
 1. Compress multi-line entries to single lines
 2. Merge entries with overlapping lessons
 3. Remove point-in-time data: counts with date ranges, incident tallies with specific dates
 4. Entries must be **timeless rules** — "what to do" not "what happened"
+5. Move domain-specific patterns to satellite files (e.g. `work/acme/patterns.md`) — only universal rules stay in core
+
+**Pattern routing** — when adding a new pattern, decide where it belongs:
+- **Core** (`cog-meta/patterns.md`) — universal rules that apply every conversation
+- **Domain satellite** (`{domain}/patterns.md`) — rules specific to one domain, loaded only by that skill
+- Satellite files have a soft cap of 30 lines each
 
 **Hot-memory relevance** — Review all `hot-memory.md` files:
 - **Promote**: If a pattern is heating up → add to appropriate `hot-memory.md`
 - **Demote**: If a hot-memory item has gone quiet (no references in 2+ weeks) → remove from hot-memory
 - **Goal**: hot-memory = what matters *right now*
 
-### 3b. Detect Thread Candidates
+### 3b. Entity Registry Format Enforcement
+
+Scan all `entities.md` files for format compliance:
+1. **3-line check**: Any `### entry` with >3 content lines → compress. If the entry has a detail file (`→ [[link]]`), trim to: name line, key facts, status/link. If no detail file exists but entry is >5 lines, flag as a promotion candidate for a thread file.
+2. **Status/last fields**: Every entry should have `status: active|inactive` and `last: YYYY-MM-DD`. Scan recent session transcripts to update `last:` dates for mentioned entities.
+3. **Cross-domain pointers**: If the same person appears in multiple entity files, ensure one is canonical (full entry) and others are pointers (`see [[link]]`).
+
+### 3c. Detect Thread Candidates
 
 Scan observations for topics that appear across 3+ dates or span 2+ weeks. These are thread candidates.
 
@@ -94,7 +107,7 @@ For each candidate:
 - If not, note it as a suggestion: "Thread candidate: [topic] — [N] fragments across [date range]"
 - Don't auto-create threads — suggest them
 
-### 3c. Scenario Feedback Loop
+### 3d. Scenario Feedback Loop
 
 Scan `memory/cog-meta/scenarios/` for active scenario files.
 

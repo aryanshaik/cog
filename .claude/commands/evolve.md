@@ -20,6 +20,7 @@ Architecture reference:
 Measure (don't edit content):
 - `memory/hot-memory.md`
 - `memory/cog-meta/patterns.md`
+- Any domain satellite pattern files (e.g. `work/*/patterns.md`)
 
 ## Process
 
@@ -40,11 +41,19 @@ Review the output of recent housekeeping and reflect runs:
 - Did pruning priority order work? Or did it trim wrong things?
 - Are glacier thresholds (50 obs, 10 action items) right?
 - Is the 50-line hot-memory cap appropriate?
+- Is entity format enforcement catching violations?
 
 **Reflect rules check:**
 - Did condensation produce useful patterns, or noise?
 - Did thread candidate detection work?
 - Is reflect staying in its lane?
+- Are patterns routing to the right file (core vs satellite)?
+
+**Scorecard metrics** — measure and record in evolve-log:
+- Core `patterns.md`: line count / 70, byte size / 5.5KB (target: ≤1.0)
+- Satellite pattern files: list each with line count (soft cap: 30)
+- Entity compression ratio: `(total entity lines across all files) / (total ### entries)` (target: ≤3.0)
+- Hot-memory line counts vs caps
 
 ### 3. Rule Change Proposals
 

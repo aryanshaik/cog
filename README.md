@@ -94,14 +94,15 @@ Here's what builds up over time. None of this is pre-filled — it emerges from 
 - 2026-03-12 [insight]: Realized I've been avoiding the budget conversation. Not about money — about control.
 ```
 
-**`memory/work/acme/entities.md`** — people and context:
+**`memory/work/acme/entities.md`** — compact 3-line registry:
 
 ```markdown
-### Sarah Chen
-- Role: Engineering Manager (direct report to VP Eng)
-- Context: Joined Jan 2025. Runs platform team. Prefers async updates over meetings.
-- Notes: Advocated for my promotion. Values shipping over polish.
+### Sarah Chen (Engineering Manager)
+- Direct report to VP Eng | Joined Jan 2025 | Runs platform team | Prefers async over meetings
+- status: active | last: 2026-03-10
 ```
+
+Heavy entries get promoted to thread files — the entity stub just links: `→ [[work/acme/sarah-chen]]`.
 
 ### Progressive Condensation
 

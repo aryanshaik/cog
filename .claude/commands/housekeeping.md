@@ -64,7 +64,15 @@ For each non-glacier memory file:
 
 Only add links where the reference is substantive.
 
-## 5b. Temporal Fact Maintenance
+## 5b. Entity Registry Format Enforcement
+
+Scan all `entities.md` files for registry format compliance:
+
+1. **3-line max**: Any `### entry` with >3 content lines should be compressed. If the entry has an associated detail file (`→ [[link]]`), compress to: name/relationship, pipe-separated key facts, status+link. If no detail file exists and entry is >5 lines, flag as a promotion candidate (suggest creating a thread file).
+2. **Glacier candidates**: Entries with `status: inactive` or `last:` date >6 months ago → move to `glacier/{domain}/entities-inactive.md` (leave a stub with archived comment).
+3. **Missing metadata**: Flag entries missing `status:` or `last:` fields.
+
+## 5c. Temporal Fact Maintenance
 
 Scan all `entities.md` files for `(until YYYY-MM)` markers with past dates:
 1. If the line has no ~~strikethrough~~, add it

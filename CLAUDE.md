@@ -125,12 +125,10 @@ The `/reflect` skill reads recent session transcripts to review interactions, ca
 3. **Observations are append-only**: `- YYYY-MM-DD [tags]: <observation>` — never edit past entries
    - Tags: `health`, `habits`, `family`, `milestone`, `work`, `insight`, `regression`, `philosophy`, `mental-health`
 4. **Action items**: `- [ ] task (added YYYY-MM-DD)` / `- [x] task (done YYYY-MM-DD)`
-5. **Entities**: Edit in place, never delete. For time-bound facts, use inline temporal markers:
-   - `(since YYYY-MM)` — when a fact became true (role, relationship, location)
-   - `(until YYYY-MM)` — when a fact stopped being true (keep the line, don't delete)
-   - Example: `- Role: Senior Engineer (since 2024-03)` or `- Was at Acme (until 2025-06)`
+5. **Entities**: 3-line compact registry format. Each entry: `### Name (relationship)` / pipe-separated key facts / `status: active|inactive | last: YYYY-MM-DD | → [[link]]`. Max 3 content lines per entry. Heavy entries promoted to detail thread files — entity stub links to thread via `→ [[link]]`. Cross-domain entities: canonical entry in primary domain, pointer in secondary (e.g. `see [[work/acme/entities#Jane]]` in personal). **Temporal validity**: When a fact changes, mark old value as superseded with date. `last:` dates updated by reflect from journal/session scans. Entities inactive 6+ months → housekeeping moves to glacier.
 6. **Hot memory <50 lines**: Prune aggressively, move detail to observations
 7. **Self-improvement**: After notable interactions, append to `cog-meta/self-observations.md`. Periodically distill patterns into `cog-meta/patterns.md`
+   - **Pattern routing**: Core patterns (`cog-meta/patterns.md`, ≤70 lines / 5.5KB) are universal rules injected every turn. Domain-specific patterns go in satellite files (e.g. `work/acme/patterns.md`) loaded only by their owning skill. New patterns go to the appropriate satellite if domain-specific, or core if universal. Satellite files have a soft cap of 30 lines each.
 8. **Single Source of Truth (SSOT)**: Each fact lives in ONE canonical file. Other files reference via `[[link]]`, never copy.
    - `entities.md` — people, organizations, named things
    - `action-items.md` — all tasks
@@ -175,7 +173,7 @@ When responding to any query:
 | `hot-memory.md`                 | Rewrite freely                                        |
 | `observations.md`               | Append only                                           |
 | `action-items.md`               | Append new, check off done                            |
-| `entities.md`                   | Edit in place by `### Name` header. `(since)`/`(until)` for time-bound facts |
+| `entities.md`                   | 3-line registry: `### Name` / key facts / `status\|last\|→[[link]]`. Max 3 content lines per entry |
 | `calendar.md`                   | Edit in place                                         |
 | `health.md`                     | Edit `## Current State`, append to `## History`       |
 | `philosophy.md`                 | Edit in place                                         |
