@@ -12,7 +12,7 @@ There is no server, no runtime, no application code. `CLAUDE.md` contains the co
 
 Everything is plain text [by design](https://lab.puga.com.br/cog/#/why-text). Not as a compromise — because plain text is what makes this work. Memory files are just markdown, which means Claude can `grep` for patterns, `find` what changed, `wc` to check file sizes, and `git diff` to see what the last pipeline run touched. The same Unix tools that make Linux powerful make Cog's memory observable and maintainable.
 
-Cog is a learning tool — an experiment in watching how an AI organizes its own knowledge when given clear conventions and self-observation capabilities. You set the rules, Claude scaffolds the structure, and over time you can observe how the model reflects on its own behavior, audits its own rules, and evolves how it operates. Every decision is visible. Every rule is editable. Every change is in the git log.
+Cog is a learning tool — an experiment in watching how a memory architecture evolves when given clear conventions and self-observation capabilities. You set the rules, Claude scaffolds the structure, and the pipeline skills refine the conventions over time. The model doesn't evolve — it follows whatever rules it finds. The rules are what change. Every decision is visible. Every rule is editable. Every change is in the git log.
 
 ## Quick Start
 
