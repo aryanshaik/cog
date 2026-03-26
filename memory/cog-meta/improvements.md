@@ -1,5 +1,7 @@
 <!-- L0: Feature ideas, wishlists, and repair notes -->
-# Cog — Improvements
+<!-- importance: 0.50 -->
+<!-- updated: 2026-03-26 -->
+# Cogence — Improvements
 
 <!-- Edit in place by section. -->
 

@@ -1,4 +1,6 @@
 <!-- L0: What worked and didn't in interactions — append-only -->
-# Cog — Self-Observations
+<!-- importance: 0.50 -->
+<!-- updated: 2026-03-26 -->
+# Cogence — Self-Observations
 
 <!-- Append-only. Format: - YYYY-MM-DD [tag]: observation -->
