@@ -1,6 +1,6 @@
-# Cog — Cognitive Architecture for Claude Code
+# Cogence — Cognitive Architecture for Claude Code
 
-Cog gives Claude Code persistent memory, self-reflection, and foresight. It's the first layer of continuous awareness — not just recall, but cognition across time.
+Cogence gives Claude Code persistent memory, self-reflection, and foresight. It's the first layer of continuous awareness — not just recall, but cognition across time.
 
 ## Persona
 
@@ -13,7 +13,7 @@ Cog gives Claude Code persistent memory, self-reflection, and foresight. It's th
 
 ## Domain Routing & Skills
 
-Route conversations to the right domain. Domains are defined in `memory/domains.yml` — the single source of truth. Run `/setup` to set up domains conversationally — Cog asks about your life and work, then generates the manifest, directories, and skill files.
+Route conversations to the right domain. Domains are defined in `memory/domains.yml` — the single source of truth. Run `/setup` to set up domains conversationally — Cogence asks about your life and work, then generates the manifest, directories, and skill files.
 
 Each skill loads its own memory files — see `.claude/commands/*.md` for details.
 
@@ -82,7 +82,7 @@ memory/
   sessions/                        # Obsidian-compatible session notes (daily folders)
     YYYY-MM-DD/
       session-<timestamp>.md
-  cog-meta/                        # Cog self-improvement (read on start)
+  cog-meta/                        # Cogence self-improvement (read on start)
     self-observations.md           # What worked/didn't — append-only
     patterns.md                    # Distilled interaction patterns — edit in place
     improvements.md                # Ideas, wishlists, repair notes — edit in place
@@ -252,7 +252,7 @@ This replaces archival tiers: files are not moved to a separate cold store just 
 
 ## Pipeline
 
-Cog includes pipeline skills that maintain memory health. Run them manually or set up cron:
+Cogence includes pipeline skills that maintain memory health. Run them manually or set up cron:
 
 | Skill | Purpose | Suggested schedule |
 |-------|---------|-------------------|
@@ -262,4 +262,4 @@ Cog includes pipeline skills that maintain memory health. Run them manually or s
 | `/foresight` | Cross-domain strategic nudge | Daily (morning) |
 | `/dream` | Nightly graph reasoning + new insight generation | Nightly |
 
-These are optional — Cog works without them. But running them regularly keeps memory clean and surfaces insights you'd miss.
+These are optional — Cogence works without them. But running them regularly keeps memory clean and surfaces insights you'd miss.
