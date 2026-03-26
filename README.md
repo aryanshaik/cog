@@ -1,6 +1,6 @@
 # Cogence
 
-A plain-text cognitive architecture for Claude Code — simple by design, so the model can reason over its own memory with the same Unix tools (`grep`, `find`, `git diff`) it already knows.
+Forked from marciopuga/cog. A plain-text cognitive architecture for Claude Code — simple by design, so the model can reason over its own memory with the same Unix tools (`grep`, `find`, `git diff`) it already knows.
 
 **[Documentation](https://lab.puga.com.br/cogence)** | **[Why Text](https://lab.puga.com.br/cogence/#/why-text)** | **[Credits & Inspiration](https://lab.puga.com.br/cogence/#/credits)**
 
