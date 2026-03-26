@@ -2,8 +2,6 @@
 
 Forked from marciopuga/cog. A plain-text cognitive architecture for Claude Code — simple by design, so the model can reason over its own memory with the same Unix tools (`grep`, `find`, `git diff`) it already knows.
 
-**[Documentation](https://lab.puga.com.br/cogence)** | **[Why Text](https://lab.puga.com.br/cogence/#/why-text)** | **[Credits & Inspiration](https://lab.puga.com.br/cogence/#/credits)**
-
 ## What is Cogence?
 
 Cogence is a set of conventions — not code — that teach Claude Code how to build and maintain its own memory. You define the rules in plain text. Claude scaffolds the structure and follows them. The filesystem is the interface.
@@ -19,7 +17,7 @@ Cogence is a learning tool — an experiment in watching how a memory architectu
 Requires [Claude Code](https://docs.anthropic.com/en/docs/claude-code/overview).
 
 ```bash
-git clone https://github.com/marciopuga/cogence
+git clone https://github.com/aryanshaik/cogence
 cd cogence
 ```
 
